@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>dp</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='dp.js'></script>
+    <script src='ashok.js'></script>
+    
+    <script>
+        
+        
+        $(document).ready(function(){
+            $("#name").change(function(){
+                var name=$(this).val();
+                var string=String(name).substring(0,100);
+               
+                
+                var test1=/^[a-zA-Z]+$/.test(string);
+               
+                if(test1){
+                    $("#prasad").html("")
+                }else{
+                    $("#prasad").html("Invalid name")
+                }
+            })
+             //alert("Completed")
+
+        $("#pan").change(function(){
+            var pan=$(this).val();
+            
+            var string=String(pan).substring(0,5);
+            var number=String(pan).substring(5,9);
+            var string1=String(pan).substring(9,10)
+            var lenath=String(pan).length
+            var test1=/^[a-zA-Z]+$/.test(string);
+            var test2=$.isNumeric(number)
+            var test3=/^[a-zA-Z]+$/.test(string1)
+         if(!/^[a-zA-Z]+$/.test(string)||!$.isNumeric(number)||!/^[a-zA-Z]+$/.test(string1)||lenath <10 ){
+                $("#valid").html("Invalid pan Number")
+                } else {
+                    
+                    $("#valid").html("")
+                }
+            });
+            
+           //alert("Completed")
+
+         $("#mail").change(function(){
+
+             var email=$(this).val();
+             var email1=/^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email);
+              //alert("mail id suc")
+             if(email1){
+                    $("#gmail").html("")
+                }else{
+                    $("#gmail").html("Invalid email id ")
+                }
+
+
+         })  
+
+           //alert("Completed")
+
+           $("#phone").change(function(){
+               var phone=$(this).val();
+               //var phone_1=/^[0-9]*$/;
+              // var phone_1=String(phone).substring(0,9);
+               var test=$.isNumeric(phone)
+               var lenth=phone.length;
+               if(lenth<10 ){
+                $("#phonenumber").html("Invalid Mobile number")
+               }
+               else if(!test){
+                $("#phonenumber").html("Invalid Mobile number")
+               }
+              
+               else{
+               
+                $("#phonenumber").html("")
+            
+               }
+           })
+           //alert("Completed")
+
+
+
+
+            
+        })
+       
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Enter your name:
+            </td>
+            <td>
+                <input type="text"id="name" maxlength="100">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td id="prasad">
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Pan Number:
+            </td>
+            
+            <td>
+                <input type="text" id="pan" name="adhare" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td id="valid">
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter your mali id
+            </td>
+            <td>
+                <input type="email"id="mail"name="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td id="gmail">
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter your phone number:
+            </td>
+            <td>
+                <input type="text"id="phone"name="name" maxlength="10">
+            </td>
+            <tr>
+                <td>
+
+                </td>
+                <td id="phonenumber">
+
+                </td>
+            </tr>
+        </tr>
+        <tr>
+            <td>
+                Enter your address
+            </td>
+            
+                <td>
+
+                    <input type="street"  id="autocomplete" placeholder="Street">
+                </td>
+                <td>
+
+                </td>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="city"  id="inputCity"  placeholder="City">
+                                   
+                      </td>
+                
+                         
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="state"  id="inputState" placeholder="State">
+                         
+                       
+                        
+                    </td>
+                </tr>
+      
+  
+            
+        </tr>
+         
+        
+    </table>
+    
+</body>
+</html>
